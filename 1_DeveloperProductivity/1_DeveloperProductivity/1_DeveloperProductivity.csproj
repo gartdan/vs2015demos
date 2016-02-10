@@ -54,6 +54,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Scripts\1.r" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\RefactoringEssentials.3.2.0\analyzers\dotnet\RefactoringEssentials.dll" />
