@@ -11,13 +11,21 @@ namespace DeveloperProductivity
         private static readonly int MAX_VALUE = int.MaxValue;
         public Tree<int> Build(int numNodes)
         {
+            if (numNodes <= 0) throw new ArgumentOutOfRangeException("numNodes");
             var tree = new Tree<int>();
-            var r = new Random();
-            var nums = Enumerable.Repeat(0, numNodes)
-                .Select(i => r.Next(1, MAX_VALUE))
-                .ToArray();
-            foreach (var num in nums)
-                tree.Add(num);
+            try
+            {
+                var r = new Random();
+                var nums = Enumerable.Repeat(0, numNodes)
+                    .Select(i => r.Next(1, MAX_VALUE))
+                    .ToArray();
+                foreach (var num in nums)
+                {
+                    tree.Add(num);
+                }
+                    
+            }
+            catch (Exception ex) { }
             return tree;
 
         }
