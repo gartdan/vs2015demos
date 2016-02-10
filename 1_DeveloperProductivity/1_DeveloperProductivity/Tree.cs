@@ -38,7 +38,11 @@ namespace DeveloperProductivity
             visit(n);
         }
 
-        
+        public void BFS(Action<Node<T>> visit)
+        {
+            BFS(this, visit);
+        }
+
         public void BFS(Tree<T> tree, Action<Node<T>> visit)
         {
             if (tree?.Root == null)
