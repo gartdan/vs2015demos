@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITreeBuilder.cs" />
+    <Compile Include="LongTreeBuilder.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tree.cs" />
-    <Compile Include="TreeBuilder.cs" />
+    <Compile Include="IntTreeBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
