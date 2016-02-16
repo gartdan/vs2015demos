@@ -1,0 +1,29 @@
+{
+  "commands": {
+    "prebuild": {
+      "fileName": "cmd.exe",
+      "workingDirectory": ".",
+      "arguments": "/c prebuild.bat"
+    },
+    "postbuild": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "-ExecutionPolicy Bypass -File postbuild.ps1"
+    },
+    "postbuild -669951541": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "-ExecutionPolicy Bypass -File postbuild.ps1"
+    },
+    "prebuild -379997090": {
+      "fileName": "cmd.exe",
+      "workingDirectory": ".",
+      "arguments": "/c prebuild.bat"
+    }
+  },
+  "-vs-binding": {
+    "AfterBuild": [
+      "postbuild"
+    ]
+  }
+}
