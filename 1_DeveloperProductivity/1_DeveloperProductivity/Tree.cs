@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DeveloperProductivity
 {
@@ -25,7 +22,7 @@ namespace DeveloperProductivity
             if (n == null)
                 return;
             DFSInorder(n.Left, visit);
-            visit(n);
+            visit?.Invoke(n);
             DFSInorder(n.Right, visit);
         }
 

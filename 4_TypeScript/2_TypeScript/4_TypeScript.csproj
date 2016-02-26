@@ -24,11 +24,12 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
-    <Content Include="scratch.js" />
+    <TypeScriptCompile Include="scratch.ts" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="async.ts" />
     <TypeScriptCompile Include="greeter.ts" />
     <TypeScriptCompile Include="typings\node.d.ts" />
     <TypeScriptCompile Include="typings\react.d.ts" />

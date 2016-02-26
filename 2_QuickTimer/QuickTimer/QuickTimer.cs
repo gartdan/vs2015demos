@@ -31,14 +31,11 @@ namespace QuickTimer
 
 
         //4 -- Single statement Expression Bodied properties (also for methods)
-        public long ElapsedSeconds
-        {
-            get { return _sw.ElapsedMilliseconds / 1000L; }
-        }
+        public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
        
         //public long ElapsedSeconds => _sw.ElapsedMilliseconds / 1000L;
 
-        public long ElapsedMinutes => ElapsedSeconds / 60L;
+        public long? ElapsedMinutes => ElapsedSeconds / 60L;
 
         //3. Null Conditional Operator
         //If the left hand side is null, the whole thing is null. Only if the left hand side is not null do we do the other side of the operation.
@@ -106,8 +103,9 @@ namespace QuickTimer
         public void Start()
         {
             //5: Nameof Operator. Rename feactoring, the string changes too.
-            Log($"--- Entering the Start method.---");
-            //Log($"--- Entering the {nameof(Start)} method.---");
+            //Log($"--- Entering the Start method.---");
+            var start = nameof(Start);
+            Log($"--- Entering the {nameof(Start)} method.---");
             OnStart(EventArgs.Empty);
             ThreadPool.QueueUserWorkItem(ReadInput);
             _sw.Start();

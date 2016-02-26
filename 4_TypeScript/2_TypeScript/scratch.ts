@@ -1,4 +1,4 @@
-﻿Object.defineProperty(window, "MySweetApp", { value: "v1.0.0", readonly: true });
+﻿Object.defineProperty(window, "MySweetApp", { value: "v1.0.0", writable: true });
 
 function deliveryMethod() {
     // TODO
@@ -6,24 +6,24 @@ function deliveryMethod() {
 }
 
 function shipWeight() {
-    return parseInt(document.getElementById('weight'));
+    return parseInt(document.getElementById('weight').textContent);
 }
 
 /*
  * @param {(string | string[])} emailAddr - An email address of array of email addresses
  */
 function sendUpdates(emailAddr) {
-    function sendEmail(addr) {
+    function sendEmail(addr: (string | string[])) {
         // Default to standard delivery if empty
         console.log(`Shipping to ${addr} via ${deliveryMethod() | "standard"} delivery`);
 
-        if (shipWeight > 100) {
+        if (shipWeight() > 100) {
             console.log("WARNING: Oversize package");
         }
     }
     // If its an array, loop over it
-    if (emailAddr.length) {
-        emailAddr.forEach((idx, val) => {
+    if (Array.isArray(emailAddr.length)) {
+        emailAddr.forEach(( val, idx) => {
             sendEmail(val.trim());
         });
     } else {

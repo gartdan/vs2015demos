@@ -20,6 +20,9 @@ function* getfiles() {
     yield "/temp/file2.txt";
 }
 
+
+
+
 function logWords(filename, text) {
     console.log(`File "${filename}" has ${text.split(' ').length} words`);
 }
