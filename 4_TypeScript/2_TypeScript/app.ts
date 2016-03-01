@@ -1,4 +1,6 @@
 ﻿/// <reference path=".\typings\node.d.ts"/>
+
+
 "use strict";
 
 import * as fs from "fs";
@@ -20,8 +22,33 @@ function* getfiles() {
     yield "/temp/file2.txt";
 }
 
+function foo(x: boolean) {
+    if (x) {
+        return 10;
+    } else {
+        //throw new Error();
+    }
+    return 1;
+}
 
+function f() {
+    return //Automatic Semicolor Insertion triggered at newline
+    {
+        x: "string"
+    }
+}
 
+declare class UIElement {
+    animate(options: AnimationOptions): void;
+}
+
+interface AnimationOptions {
+    deltaX: number;
+    deltaY: number;
+    easing: "ease-in" | "ease-out" | "ease-in-outerHeight";
+}
+
+new UIElement().animate({ deltaX: 100, deltaY: 150, easing: "ease-out"});
 
 function logWords(filename, text) {
     console.log(`File "${filename}" has ${text.split(' ').length} words`);

@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Threading;
 //:1 -- using Static classes
 using static System.Console;
-using SC = System.Console;
 
 namespace QuickTimer
 {
@@ -28,8 +27,8 @@ namespace QuickTimer
             var name = "Dan";
             var localStr = "Hi {0}";
             var s = string.Format(localStr, name);
-            FormattableString formattedSctring = $"Hi {name}";
-
+            FormattableString formattedString = $"Hi {name}";
+            
             //IFormattable
             #region C#6 String Interpolation
             //2: Example of new string interpolation. Insert the values where they're suppsoed to go in the string literal
@@ -40,7 +39,7 @@ namespace QuickTimer
                     Press '{QuitChar} to quit.");
             #endregion
 
-            ReadKey();
+            Console.ReadKey();
             Console.Clear();
             timer.Start();
         }
