@@ -10,6 +10,7 @@ namespace DeveloperProductivity
         {
             if (numNodes <= 0) throw new ArgumentOutOfRangeException("numNodes");      
             var tree = new Tree<int>();
+
             try
             {
                 var r = new Random();
@@ -22,7 +23,10 @@ namespace DeveloperProductivity
                 }
 
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                throw;
+            }
             return tree;
 
         }

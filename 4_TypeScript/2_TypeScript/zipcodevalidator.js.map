@@ -1,0 +1,1 @@
+{"version":3,"file":"zipcodevalidator.js","sourceRoot":"","sources":["zipcodevalidator.ts"],"names":["ZipCodeValidator","ZipCodeValidator.isAcceptable"],"mappings":";;;;;;;;;;;;;AAEa,oBAAY,GAAG,UAAU,CAAC;AAEvC;IACIA,YAAYA,CAACA,CAASA;QAClBC,MAAMA,CAACA,CAACA,CAACA,MAAMA,IAAIA,CAACA,IAAIA,oBAAYA,CAACA,IAAIA,CAACA,CAACA,CAACA,CAACA;IACjDA,CAACA;AAELD,CAACA;AALY,wBAAgB,mBAK5B,CAAA"}
