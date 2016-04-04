@@ -46,6 +46,7 @@ namespace QuickTimer
 
         public static string Localize(string s)
         {
+            
             return string.Empty;
         }
    

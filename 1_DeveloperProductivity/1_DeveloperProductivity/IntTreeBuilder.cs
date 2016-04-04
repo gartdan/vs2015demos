@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace DeveloperProductivity
 {
@@ -8,7 +12,6 @@ namespace DeveloperProductivity
         private static readonly int MAX_VALUE = int.MaxValue;
         public Tree<int> Build(int numNodes)
         {
-            if (numNodes <= 0) throw new ArgumentOutOfRangeException("numNodes");      
             var tree = new Tree<int>();
 
             try

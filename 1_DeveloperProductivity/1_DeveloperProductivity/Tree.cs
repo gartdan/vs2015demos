@@ -22,7 +22,7 @@ namespace DeveloperProductivity
             if (n == null)
                 return;
             DFSInorder(n.Left, visit);
-            visit?.Invoke(n);
+            visit(n);
             DFSInorder(n.Right, visit);
         }
 
@@ -60,7 +60,10 @@ namespace DeveloperProductivity
 
         public Tree<T> Add(Node<T> n)
         {
-            Insert(this.Root, n);
+            try
+            {
+                Insert(this.Root, n);
+            }catch(Exception) {  } 
             return this;
         }
 
