@@ -32,7 +32,7 @@ namespace DeveloperProductivity
                 return;
             DFSPostorder(n.Left, visit);
             DFSPostorder(n.Right, visit);
-            visit(n);
+            visit?.Invoke(n);
         }
 
         public void BFS(Action<Node<T>> visit)
@@ -60,12 +60,11 @@ namespace DeveloperProductivity
 
         public Tree<T> Add(Node<T> n)
         {
-            try
-            {
+            
                 Insert(this.Root, n);
-            }catch(Exception) {  } 
-            return this;
+                     return this;
         }
+        
 
         public Tree<T> Add(T val)
         {

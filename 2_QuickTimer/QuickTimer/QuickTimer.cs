@@ -61,11 +61,7 @@ namespace QuickTimer
         //no need to copy the delegate to a local variable and check for null before triggering
         public virtual void OnStart(EventArgs e)
         {
-            var handler = StartEvent;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
+            StartEvent?.Invoke(this, e);
             //StartEvent?.Invoke(this, e);
         }
 
@@ -101,7 +97,7 @@ namespace QuickTimer
         public void Start()
         {
             //5: Nameof Operator. Rename feactoring, the string changes too.
-            Log($"--- Entering the Start method.---");
+            Log($"--- Entering the {nameof(Start)} method.---");
             //var start = nameof(Start);
             Log($"--- Entering the {nameof(Start)} method.---");
             OnStart(EventArgs.Empty);

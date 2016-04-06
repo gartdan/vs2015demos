@@ -32,7 +32,7 @@ function foo(x: boolean) {
 }
 
 function f() {
-    return //Automatic Semicolor Insertion triggered at newline
+    return //Automatic Semicolon Insertion triggered at newline
     {
         x: "string"
     }

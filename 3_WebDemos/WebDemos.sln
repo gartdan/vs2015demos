@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D5632EDF-2E23-4538-BB04-10E3B38C58CE}"
 EndProject
@@ -14,6 +14,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebDemos", "src\WebDemos\We
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{6A618717-65EC-4CD4-8834-203A5828755F}"
 	ProjectSection(SolutionItems) = preProject
+		commands.json = commands.json
 		postbuild.ps1 = postbuild.ps1
 		prebuild.bat = prebuild.bat
 	EndProjectSection

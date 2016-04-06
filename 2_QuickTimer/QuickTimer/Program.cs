@@ -28,19 +28,19 @@ namespace QuickTimer
             var localStr = "Hi {0}";
             var s = string.Format(localStr, name);
             FormattableString formattedString = $"Hi {name}";
-            
+
             //IFormattable
             #region C#6 String Interpolation
             //2: Example of new string interpolation. Insert the values where they're suppsoed to go in the string literal
-            Console.WriteLine($@"Welcome to {Localize(AppName)}. {NewLine}
+            WriteLine($@"Welcome to {Localize(AppName)}. {NewLine}
                     Instructions: {NewLine}
                     Press any key to begin or pause. {NewLine}
                     Press '{ResetChar}' to reset. {Environment.NewLine}
-                    Press '{QuitChar} to quit.");
+                    Press '{QuitChar} to  quit.");
             #endregion
 
-            Console.ReadKey();
-            Console.Clear();
+            ReadKey();
+            Clear();
             timer.Start();
         }
 
