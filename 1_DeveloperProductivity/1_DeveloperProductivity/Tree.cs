@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace DeveloperProductivity
 {
@@ -55,14 +56,22 @@ namespace DeveloperProductivity
                 if (node.Right != null)
                     q.Enqueue(node.Right);
             }
+        }
 
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            if(this.Root != null)
+            {
+                this.BFS((n) => sb.Append($"{n.Value} "));
+            }
+            return sb.ToString();
         }
 
         public Tree<T> Add(Node<T> n)
         {
-            
-                Insert(this.Root, n);
-                     return this;
+            Insert(this.Root, n);
+                    return this;
         }
         
 

@@ -22,9 +22,8 @@ cube <- function(x=5) {
   return(x*x*x);
 }
 
-cube <- function(x=5) {
-	return (x*x*x);
-}
+
+
 cat("Calling cube with 2 : ", cube(2), "\n")    # will give 2^3
 cat("Calling cube        : ", cube(), "\n")     # will default to 5^3.
 
