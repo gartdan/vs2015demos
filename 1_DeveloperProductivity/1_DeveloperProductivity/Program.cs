@@ -17,7 +17,6 @@ namespace DeveloperProductivity
             ITreeBuilder<int> builder = new IntTreeBuilder();
             var largeTree = builder.Build(1000000);
             Console.WriteLine($"There are {largeTree.Count} elements in the large tree");
-
         }
 
 

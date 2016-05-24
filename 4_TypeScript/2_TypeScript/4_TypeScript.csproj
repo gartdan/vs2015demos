@@ -25,23 +25,51 @@
     <Content Include="app.css" />
     <Content Include="index.html" />
     <Content Include="initialstate\scratch.js" />
+    <Content Include="package.json" />
+    <Content Include="es6\tsconfig.json" />
+    <Content Include="zipcodevalidator.js" />
     <None Include="scratch.ts.bak" />
     <Content Include="lib\math.js" />
-    <TypeScriptCompile Include="scratch.ts" />
+    <Content Include="zipcodevalidator.js.map" />
+    <TypeScriptCompile Include="src\code.ts" />
+    <TypeScriptCompile Include="es6\downleveling.ts" />
+    <TypeScriptCompile Include="src\scratch.ts" />
+    <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\async.js" />
+    <Content Include="Scripts\App\code.js" />
+    <Content Include="Scripts\App\downleveling.js" />
+    <Content Include="Scripts\App\greeter.js" />
+    <Content Include="Scripts\App\scratch.js" />
+    <Content Include="Scripts\App\validation.js" />
+    <Content Include="Scripts\App\zipcodevalidator.js" />
+    <Content Include="validation.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="async.ts" />
-    <TypeScriptCompile Include="greeter.ts" />
-    <TypeScriptCompile Include="typings\d3\d3.d.ts" />
+    <TypeScriptCompile Include="es6\app.ts" />
+    <TypeScriptCompile Include="es6\async.ts" />
+    <TypeScriptCompile Include="src\greeter.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="typings\modules\d3\index.d.ts" />
     <TypeScriptCompile Include="typings\node.d.ts" />
     <TypeScriptCompile Include="typings\react.d.ts" />
-    <TypeScriptCompile Include="validation.ts" />
-    <TypeScriptCompile Include="zipcodevalidator.ts" />
+    <TypeScriptCompile Include="src\validation.ts" />
+    <TypeScriptCompile Include="src\zipcodevalidator.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\tsconfig.json" />
+    <Content Include="typings\modules\d3\typings.json" />
+    <Content Include="Scripts\App\app.js.map" />
+    <Content Include="Scripts\App\async.js.map" />
+    <Content Include="Scripts\App\scratch.js.map" />
+    <Content Include="Scripts\App\validation.js.map" />
+    <Content Include="Scripts\App\zipcodevalidator.js.map" />
+    <Content Include="Scripts\App\code.js.map" />
+    <Content Include="Scripts\App\downleveling.js.map" />
+    <Content Include="Scripts\App\greeter.js.map" />
+    <Content Include="typings.json" />
+    <Content Include="validation.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

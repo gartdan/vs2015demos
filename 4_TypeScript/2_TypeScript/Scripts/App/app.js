@@ -1,4 +1,4 @@
-/// <reference path=".\typings\node.d.ts"/>
+/// <reference path="..\typings\node.d.ts"/>
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments)).next());
     });
 };
-const fs = require("fs");
+import * as fs from "fs";
 function readFile(filename) {
     return new Promise((resolve, reject) => {
         fs.readFile(filename, 'utf8', (err, data) => {
@@ -32,6 +32,12 @@ function foo(x) {
     }
     return 1;
 }
+function f() {
+    return {
+        x: "string"
+    };
+}
+new UIElement().animate({ deltaX: 100, deltaY: 150, easing: "ease-out" });
 function logWords(filename, text) {
     console.log(`File "${filename}" has ${text.split(' ').length} words`);
 }

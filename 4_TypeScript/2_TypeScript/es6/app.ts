@@ -1,4 +1,4 @@
-﻿/// <reference path=".\typings\node.d.ts"/>
+﻿/// <reference path="..\typings\node.d.ts"/>
 
 
 "use strict";
@@ -32,8 +32,7 @@ function foo(x: boolean) {
 }
 
 function f() {
-    return //Automatic Semicolon Insertion triggered at newline
-    {
+    return {
         x: "string"
     }
 }
