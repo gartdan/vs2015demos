@@ -17,9 +17,9 @@ namespace QuickTimer
         static void Main(string[] args)
         {
             var timer = new QuickTimer();
-            timer.QuitEvent +=  (o, e) => Clear();
-            timer.ResetEvent += (o, e) => Clear();
-            timer.TickEvent += (o, e) => Write($"\r{timer.ElapsedMilliseconds.ToSeconds()}");
+            timer.QuitEvent +=  (o, e) => Console.Clear();
+            timer.ResetEvent += (o, e) => Console.Clear();
+            timer.TickEvent += (o, e) => Console.Write($"\r{timer.ElapsedMilliseconds.ToSeconds()}");
 
             WriteLine("Welcome to {0}. {3}Instructions: {3}Press any key to begin or pause. {3}Press '{1}' to reset. {3}Press '{2}' to quit.",
                 AppName, ResetChar, QuitChar, NewLine);
