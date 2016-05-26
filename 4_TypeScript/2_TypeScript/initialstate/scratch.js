@@ -15,7 +15,7 @@ function shipWeight() {
 function sendUpdates(emailAddr) {
     function sendEmail(addr) {
         // Default to standard delivery if empty
-        console.log(`Shipping to ${addr} via ${deliveryMethod() | "standard"} delivery`);
+        console.log(`Shipping to ${addr} via ${deliveryMethod() || "standard"} delivery`);
 
         if (shipWeight > 100) {
             console.log("WARNING: Oversize package");
@@ -23,7 +23,7 @@ function sendUpdates(emailAddr) {
     }
     // If its an array, loop over it
     if (emailAddr.length) {
-        emailAddr.forEach((idx, val) => {
+        emailAddr.forEach((val, idx) => {
             sendEmail(val.trim());
         });
     } else {

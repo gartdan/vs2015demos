@@ -27,7 +27,7 @@
     <Content Include="initialstate\scratch.js" />
     <Content Include="package.json" />
     <Content Include="es6\tsconfig.json" />
-    <TypeScriptCompile Include="src\scratch.ts" />
+    <Content Include="src\scratch.js" />
     <Content Include="zipcodevalidator.js" />
     <None Include="scratch.ts.bak" />
     <Content Include="lib\math.js" />
@@ -51,7 +51,6 @@
     <TypeScriptCompile Include="src\greeter.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="typings\modules\d3\index.d.ts" />
     <TypeScriptCompile Include="typings\modules\parse-json\index.d.ts" />
     <TypeScriptCompile Include="typings\node.d.ts" />
     <TypeScriptCompile Include="typings\react.d.ts" />
@@ -60,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\tsconfig.json" />
-    <Content Include="typings\modules\d3\typings.json" />
     <Content Include="Scripts\App\app.js.map" />
     <Content Include="Scripts\App\async.js.map" />
     <Content Include="Scripts\App\scratch.js.map" />

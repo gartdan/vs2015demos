@@ -1,12 +1,7 @@
-"use strict";
-exports.numberRegexp = /^[0-9]+$/;
-var ZipCodeValidator = (function () {
-    function ZipCodeValidator() {
+export const numberRegexp = /^[0-9]+$/;
+export class ZipCodeValidator {
+    isAcceptable(s) {
+        return s.length == 5 && numberRegexp.test(s);
     }
-    ZipCodeValidator.prototype.isAcceptable = function (s) {
-        return s.length == 5 && exports.numberRegexp.test(s);
-    };
-    return ZipCodeValidator;
-}());
-exports.ZipCodeValidator = ZipCodeValidator;
+}
 //# sourceMappingURL=zipcodevalidator.js.map
