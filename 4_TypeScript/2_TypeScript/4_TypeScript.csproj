@@ -27,13 +27,13 @@
     <Content Include="initialstate\scratch.js" />
     <Content Include="package.json" />
     <Content Include="es6\tsconfig.json" />
+    <TypeScriptCompile Include="src\scratch.ts" />
     <Content Include="zipcodevalidator.js" />
     <None Include="scratch.ts.bak" />
     <Content Include="lib\math.js" />
     <Content Include="zipcodevalidator.js.map" />
     <TypeScriptCompile Include="src\code.ts" />
     <TypeScriptCompile Include="es6\downleveling.ts" />
-    <TypeScriptCompile Include="src\scratch.ts" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\async.js" />
     <Content Include="Scripts\App\code.js" />
@@ -52,6 +52,7 @@
     <TypeScriptCompile Include="typings\index.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\modules\d3\index.d.ts" />
+    <TypeScriptCompile Include="typings\modules\parse-json\index.d.ts" />
     <TypeScriptCompile Include="typings\node.d.ts" />
     <TypeScriptCompile Include="typings\react.d.ts" />
     <TypeScriptCompile Include="src\validation.ts" />
@@ -70,6 +71,7 @@
     <Content Include="Scripts\App\greeter.js.map" />
     <Content Include="typings.json" />
     <Content Include="validation.js.map" />
+    <Content Include="typings\modules\parse-json\typings.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

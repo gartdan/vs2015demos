@@ -24,6 +24,7 @@ cube <- function(x=5) {
 
 
 
+
 cat("Calling cube with 2 : ", cube(2), "\n")    # will give 2^3
 cat("Calling cube        : ", cube(), "\n")     # will default to 5^3.
 

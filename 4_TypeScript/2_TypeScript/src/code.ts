@@ -2,6 +2,7 @@
 class HelloSayer {
     private compiler: string;
     private framework: string;
+    private isHello: boolean;
 
 
     constructor(compiler: (string | HTMLElement), framework: string) {
@@ -23,5 +24,5 @@ class HelloSayer {
 
 function sayHello() {
     var sayer = new HelloSayer("Fizz", "Buzz");
-    sayer.sayHello();
+    return sayer.sayHello();
 }

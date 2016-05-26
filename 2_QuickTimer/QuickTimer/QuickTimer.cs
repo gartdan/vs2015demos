@@ -21,26 +21,12 @@ namespace QuickTimer
         private ManualResetEvent _ev = new ManualResetEvent(true);
         private Stopwatch _sw = new Stopwatch();
 
-
-
-
-
-        //Can be simplified to with a combination of the null propagating operator and Expression 
-        // bodied properties
-        public long? ElapsedMilliseonds3 => this._sw?.ElapsedMilliseconds;
-
-
-        //4 -- Single statement Expression Bodied properties (also for methods)
-        public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
-
-        public long ElapsedMinutes => ElapsedSeconds.GetValueOrDefault(0) / 60L;
-
         //3. Null Conditional Operator
         //If the left hand side is null, the whole thing is null. Only if the left hand side is not null do we do the other side of the operation.
         //The Elvis Operator ?.
         // Great for triggering events
 
-        //3 Null-conditional operators
+        //TODO 3: Null-conditional operators
         public long ElapsedMilliseconds
         {
             get
@@ -51,23 +37,24 @@ namespace QuickTimer
             }
         }
 
-        public long? ElapsedMilliseconds2
-        {
-            get { return this._sw?.ElapsedMilliseconds; }
-        }
-
-
         //3. Null Propogating operator simplifies event triggering
         //no need to copy the delegate to a local variable and check for null before triggering
         public virtual void OnStart(EventArgs e)
         {
-            StartEvent?.Invoke(this, e);
-            //StartEvent?.Invoke(this, e);
+            var evt = StartEvent;
+            if (evt != null)
+            {
+                evt(this, e);
+            }
         }
 
         public void OnPause(EventArgs e)
         {
-            PauseEvent?.Invoke(this, e);
+            var evt = PauseEvent;
+            if (evt != null)
+            {
+                evt(this, e);
+            }
         }
 
         public void OnTick(EventArgs e)
@@ -92,13 +79,25 @@ namespace QuickTimer
         }
 
 
+        //Can be simplified to with a combination of the null propagating operator and Expression 
+        // bodied properties
 
-        
+
+        //TODO 4: -- Single statement Expression Bodied properties  (also for methods)
+        public long? ElapsedSeconds
+        {
+            get { return this._sw?.ElapsedMilliseconds / 1000L; }
+        }
+            
+        //public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
+
+        public long ElapsedMinutes => ElapsedSeconds.GetValueOrDefault(0) / 60L;
+
+
+
         public void Start()
         {
-            //5: Nameof Operator. Rename feactoring, the string changes too.
-            Log($"--- Entering the {nameof(Start)} method.---");
-            //var start = nameof(Start);
+            //TODO 5: Nameof Operator. Rename refactoring, the string changes too.
             Log($"--- Entering the {nameof(Start)} method.---");
             OnStart(EventArgs.Empty);
             ThreadPool.QueueUserWorkItem(ReadInput);

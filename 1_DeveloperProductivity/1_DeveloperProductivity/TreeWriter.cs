@@ -11,9 +11,11 @@ namespace DeveloperProductivity
     {
         public void Write(Tree<T> tree, string path)
         {
-            var stream = new FileStream(path, FileMode.OpenOrCreate);
-            var bytes = Encoding.UTF8.GetBytes(tree.ToString());
-            stream.Write(bytes, 0, bytes.Length);
+            using (var stream = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                var bytes = Encoding.UTF8.GetBytes(tree.ToString());
+                stream.Write(bytes, 0, bytes.Length);
+            }
         }
     }
 }

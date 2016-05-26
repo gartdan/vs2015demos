@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-//:1 -- using Static classes
+//TODO 1: Demo -- using Static classes
 using static System.Console;
 
 namespace QuickTimer
@@ -20,10 +20,10 @@ namespace QuickTimer
             timer.QuitEvent +=  (o, e) => Clear();
             timer.ResetEvent += (o, e) => Clear();
             timer.TickEvent += (o, e) => Write($"\r{timer.ElapsedMilliseconds.ToSeconds()}");
-           
-            Console.WriteLine("Welcome to {0}. {3}Instructions: {3}Press any key to begin or pause. {3}Press '{1}' to reset. {3}Press '{2}' to quit.",
-                AppName, ResetChar, QuitChar, NewLine);
 
+            WriteLine("Welcome to {0}. {3}Instructions: {3}Press any key to begin or pause. {3}Press '{1}' to reset. {3}Press '{2}' to quit.",
+                AppName, ResetChar, QuitChar, NewLine);
+            
             var name = "Dan";
             var localStr = "Hi {0}";
             var s = string.Format(localStr, name);
@@ -31,7 +31,13 @@ namespace QuickTimer
 
             //IFormattable
             #region C#6 String Interpolation
-            //2: Example of new string interpolation. Insert the values where they're suppsoed to go in the string literal
+            //TODO 2: Example of new string interpolation. Insert the values where they're suppsoed to go in the string literal
+            WriteLine(@"Welcome to {0}. {1}
+                    Instructions: {1}
+                    Press any key to begin or pause. {1}
+                    Press '{2}' to reset. {1}
+                    Press '{2} to  quit.", AppName, NewLine, ResetChar, QuitChar);
+
             WriteLine($@"Welcome to {Localize(AppName)}. {NewLine}
                     Instructions: {NewLine}
                     Press any key to begin or pause. {NewLine}

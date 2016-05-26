@@ -17,6 +17,6 @@ var HelloSayer = (function () {
 }());
 function sayHello() {
     var sayer = new HelloSayer("Fizz", "Buzz");
-    sayer.sayHello();
+    return sayer.sayHello();
 }
 //# sourceMappingURL=code.js.map
