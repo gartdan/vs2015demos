@@ -8,7 +8,7 @@
         //} 
 
         //4. Lambda body extension methods
-        public static string ToSeconds(this long milliseconds) => $"{milliseconds / 1000d} seconds.";
+        public static string ToSeconds(this long? milliseconds) => $"{milliseconds.GetValueOrDefault(0) / 1000d} seconds.";
 
 
         

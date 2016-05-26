@@ -27,13 +27,14 @@ namespace QuickTimer
         // Great for triggering events
 
         //TODO 3: Null-conditional operators
-        public long ElapsedMilliseconds
+        public long? ElapsedMilliseconds
         {
             get
             {
                 if (this._sw != null)
                     return _sw.ElapsedMilliseconds;
                 return 0;
+                //return _sw?.ElapsedMilliseconds;
             }
         }
 
@@ -81,24 +82,29 @@ namespace QuickTimer
 
         //Can be simplified to with a combination of the null propagating operator and Expression 
         // bodied properties
-
-
         //TODO 4: -- Single statement Expression Bodied properties  (also for methods)
-        public long? ElapsedSeconds
-        {
-            get { return this._sw?.ElapsedMilliseconds / 1000L; }
-        }
-            
-        //public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
-
         public long ElapsedMinutes => ElapsedSeconds.GetValueOrDefault(0) / 60L;
 
+
+
+        public long? ElapsedSeconds
+        {
+            get {
+                return this._sw?.ElapsedMilliseconds / 1000L;
+            }
+        }
+
+
+
+        //public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
+
+        
 
 
         public void Start()
         {
             //TODO 5: Nameof Operator. Rename refactoring, the string changes too.
-            Log($"--- Entering the {nameof(Start)} method.---");
+            Log($"--- Entering the Start method.---");
             OnStart(EventArgs.Empty);
             ThreadPool.QueueUserWorkItem(ReadInput);
             _sw.Start();
