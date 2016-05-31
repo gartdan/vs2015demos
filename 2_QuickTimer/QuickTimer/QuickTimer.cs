@@ -81,7 +81,13 @@ namespace QuickTimer
         //Can be simplified to with a combination of the null propagating operator and Expression 
         // bodied properties
         //TODO 4: -- Single statement Expression Bodied properties  (also for methods)
-        public long ElapsedMinutes => ElapsedSeconds / 60L;
+        public long ElapsedMinutes
+        {
+            get
+            {
+                return ElapsedSeconds / 60L;
+            }
+        }
 
 
         public long ElapsedSeconds => this._sw?.ElapsedMilliseconds ?? 0L / 1000L;
