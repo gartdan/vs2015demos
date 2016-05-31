@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Data;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DeveloperProductivity
 {
@@ -10,7 +13,6 @@ namespace DeveloperProductivity
         private static readonly int MAX_VALUE = int.MaxValue;
         public Tree<int> Build(int numNodes)
         {
-
             var tree = new Tree<int>();
             var r = new Random();
             var nums = Enumerable.Repeat(0, numNodes)

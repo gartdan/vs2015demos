@@ -17,8 +17,8 @@ namespace DeveloperProductivity
         public Node(T value, T leftVal, T rightVal)
         {
             this.Value = value;
-            this.Left = new Node<T> { Value = leftVal };
-            this.Right = new Node<T> { Value = rightVal };
+            this.Left = new Node<T>() { Value = leftVal };
+            this.Right = new Node<T>() { Value = rightVal };
         }
 
         public Node(T value, Node<T> leftVal = null, Node<T> rightVal = null)
