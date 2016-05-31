@@ -93,10 +93,10 @@ namespace QuickTimer
         public long ElapsedSeconds => this._sw?.ElapsedMilliseconds ?? 0L / 1000L;
 
 
-        public void Start(int? delay = null)
+        public void Start(StartParameters parameters = null)
         {
             //TODO 5: Nameof Operator. Rename refactoring, the string changes too.
-            Log($"--- Entering the {nameof(Start)} method. The value of {nameof(delay)} is {delay}---");
+            Log($"--- Entering the Start method. The value of Delay is {parameters?.Delay}---");
             OnStart(EventArgs.Empty);
             ThreadPool.QueueUserWorkItem(ReadInput);
             _sw.Start();
@@ -147,7 +147,7 @@ namespace QuickTimer
                     _sw.Start();
                 }
                 Paused = !Paused;
-            } catch (Exception ex) //when (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+            } catch (Exception ex) //when
             { }
 
         }
