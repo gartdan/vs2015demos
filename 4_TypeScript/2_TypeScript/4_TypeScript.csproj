@@ -27,7 +27,6 @@
     <Content Include="initialstate\scratch.js" />
     <Content Include="package.json" />
     <Content Include="es6\tsconfig.json" />
-    <TypeScriptCompile Include="Scripts\App\scratch.ts" />
     <Content Include="src\scratch.js" />
     <Content Include="zipcodevalidator.js" />
     <None Include="scratch.ts.bak" />
