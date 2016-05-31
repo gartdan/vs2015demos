@@ -21,17 +21,15 @@ namespace QuickTimer
         private ManualResetEvent _ev = new ManualResetEvent(true);
         private Stopwatch _sw = new Stopwatch();
 
-        //3. Null Conditional Operator
-        //If the left hand side is null, the whole thing is null. Only if the left hand side is not null do we do the other side of the operation.
-        //The Elvis Operator ?.
-        // Great for triggering events
-
         //TODO 3: Null-conditional operators
-        public long? ElapsedMilliseconds
+        public long ElapsedMilliseconds
         {
             get
-            {
-                return _sw?.ElapsedMilliseconds;
+            { 
+                if (this._sw != null)
+                    return _sw.ElapsedMilliseconds;
+                else return 0;
+                //return _sw?.ElapsedMilliseconds ?? 0;
             }
         }
 
@@ -39,17 +37,29 @@ namespace QuickTimer
         //no need to copy the delegate to a local variable and check for null before triggering
         public virtual void OnStart(EventArgs e)
         {
-            StartEvent?.Invoke(this, e);
+            var evt = StartEvent;
+            if(evt != null)
+            {
+                evt(this, e);
+            }
         }
 
         public void OnPause(EventArgs e)
         {
-            PauseEvent?.Invoke(this, e);
+            var evt = PauseEvent;
+            if (evt != null)
+            {
+                evt(this, e);
+            }
         }
 
         public void OnTick(EventArgs e)
         {
-            TickEvent?.Invoke(this, e);
+            var evt = TickEvent;
+            if (evt != null)
+            {
+                evt(this, e);
+            }
         }
 
         public void OnReset(EventArgs e)
@@ -59,7 +69,6 @@ namespace QuickTimer
 
         public void OnQuit(EventArgs e)
         {
-            //Only gets invoked if the event isn't null;
             QuitEvent?.Invoke(this, e);
         }
 
@@ -72,14 +81,12 @@ namespace QuickTimer
         //Can be simplified to with a combination of the null propagating operator and Expression 
         // bodied properties
         //TODO 4: -- Single statement Expression Bodied properties  (also for methods)
-        public long ElapsedMinutes => ElapsedSeconds.GetValueOrDefault(0) / 60L;
+        public long ElapsedMinutes => ElapsedSeconds / 60L;
 
 
+        public long ElapsedSeconds => this._sw?.ElapsedMilliseconds ?? 0L / 1000L;
 
-        public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
 
-
-      
         public void Start(int? delay = null)
         {
             //TODO 5: Nameof Operator. Rename refactoring, the string changes too.
@@ -134,7 +141,7 @@ namespace QuickTimer
                     _sw.Start();
                 }
                 Paused = !Paused;
-            } catch (Exception ex) when (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+            } catch (Exception ex) //when (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
             { }
 
         }

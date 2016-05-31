@@ -24,7 +24,7 @@ namespace QuickTimer
 
             WriteLine("Welcome to {0}. {3}Instructions: {3}Press any key to begin or pause. {3}Press '{1}' to reset. {3}Press '{2}' to quit.",
                 AppName, ResetChar, QuitChar, NewLine);
-            var x = Math.Pow(5, 10);
+
             var name = "Dan";
             var localStr = "Hi {0}";
             var s = string.Format(localStr, name);
