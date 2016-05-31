@@ -1,5 +1,5 @@
-var HelloSayer = (function () {
-    function HelloSayer(compiler, framework) {
+class HelloSayer {
+    constructor(compiler, framework) {
         if (compiler instanceof HTMLElement) {
             this.compiler = compiler.textContent;
         }
@@ -8,13 +8,12 @@ var HelloSayer = (function () {
         }
         this.framework = framework;
     }
-    HelloSayer.prototype.sayHello = function () {
+    sayHello() {
         this.compiler = document.getElementById("compiler").value;
         this.framework = document.getElementById("framework").value;
-        return "Hello from " + this.compiler + " and " + this.framework + "!";
-    };
-    return HelloSayer;
-}());
+        return `Hello from ${this.compiler} and ${this.framework}!`;
+    }
+}
 function sayHello() {
     var sayer = new HelloSayer("Fizz", "Buzz");
     return sayer.sayHello();

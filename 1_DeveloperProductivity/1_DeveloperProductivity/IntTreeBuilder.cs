@@ -4,6 +4,7 @@ using System.Data;
 
 namespace DeveloperProductivity
 {
+
     public class IntTreeBuilder : ITreeBuilder<int>
     {
         private static readonly int MAX_VALUE = int.MaxValue;

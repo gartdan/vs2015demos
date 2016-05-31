@@ -13,7 +13,7 @@ namespace DeveloperProductivity
         {
             if (n == null)
                 return;
-            visit(n);
+            visit?.Invoke(n);
             DFSPreorder(n.Left, visit);
             DFSPreorder(n.Right, visit);
         }
@@ -23,7 +23,7 @@ namespace DeveloperProductivity
             if (n == null)
                 return;
             DFSInorder(n.Left, visit);
-            visit(n);
+            visit?.Invoke(n);
             DFSInorder(n.Right, visit);
         }
 
@@ -50,7 +50,7 @@ namespace DeveloperProductivity
             while(q.Count > 0)
             {
                 var node = q.Dequeue();
-                visit(node);
+                visit?.Invoke(node);
                 if (node.Left != null)
                     q.Enqueue(node.Left);
                 if (node.Right != null)

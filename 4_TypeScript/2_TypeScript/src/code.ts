@@ -16,12 +16,14 @@ class HelloSayer {
     }
 
 
+
     sayHello(): string {
         this.compiler = (document.getElementById("compiler") as HTMLInputElement).value;
         this.framework = (document.getElementById("framework") as HTMLInputElement).value;
         return `Hello from ${this.compiler} and ${this.framework}!`;
     }
 }
+
 
 function sayHello() {
     var sayer = new HelloSayer("Fizz", "Buzz");

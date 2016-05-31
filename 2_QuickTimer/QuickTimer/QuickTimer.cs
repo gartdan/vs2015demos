@@ -31,10 +31,7 @@ namespace QuickTimer
         {
             get
             {
-                if (this._sw != null)
-                    return _sw.ElapsedMilliseconds;
-                return 0;
-                //return _sw?.ElapsedMilliseconds;
+                return _sw?.ElapsedMilliseconds;
             }
         }
 
@@ -42,20 +39,12 @@ namespace QuickTimer
         //no need to copy the delegate to a local variable and check for null before triggering
         public virtual void OnStart(EventArgs e)
         {
-            var evt = StartEvent;
-            if (evt != null)
-            {
-                evt(this, e);
-            }
+            StartEvent?.Invoke(this, e);
         }
 
         public void OnPause(EventArgs e)
         {
-            var evt = PauseEvent;
-            if (evt != null)
-            {
-                evt(this, e);
-            }
+            PauseEvent?.Invoke(this, e);
         }
 
         public void OnTick(EventArgs e)
@@ -87,24 +76,14 @@ namespace QuickTimer
 
 
 
-        public long? ElapsedSeconds
-        {
-            get {
-                return this._sw?.ElapsedMilliseconds / 1000L;
-            }
-        }
+        public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
 
 
-
-        //public long? ElapsedSeconds => this._sw?.ElapsedMilliseconds / 1000L;
-
-        
-
-
-        public void Start()
+      
+        public void Start(int? delay = null)
         {
             //TODO 5: Nameof Operator. Rename refactoring, the string changes too.
-            Log($"--- Entering the Start method.---");
+            Log($"--- Entering the {nameof(Start)} method. The value of {nameof(delay)} is {delay}---");
             OnStart(EventArgs.Empty);
             ThreadPool.QueueUserWorkItem(ReadInput);
             _sw.Start();
@@ -141,16 +120,23 @@ namespace QuickTimer
 
         private void TogglePause()
         {
-            if (!Paused)
+            //TODO 6: Exception filters
+            try
             {
-                _ev.Reset();
-                _sw.Stop();
-            }
-            else {
-                _ev.Set();
-                _sw.Start();
-            }
-            Paused = !Paused;
+                if (!Paused)
+                {
+                    _ev.Reset();
+                    _sw.Stop();
+                }
+                else
+                {
+                    _ev.Set();
+                    _sw.Start();
+                }
+                Paused = !Paused;
+            } catch (Exception ex) when (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+            { }
+
         }
 
         private void ResetTimer()

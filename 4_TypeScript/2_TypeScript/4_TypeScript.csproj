@@ -27,6 +27,7 @@
     <Content Include="initialstate\scratch.js" />
     <Content Include="package.json" />
     <Content Include="es6\tsconfig.json" />
+    <TypeScriptCompile Include="Scripts\App\scratch.ts" />
     <Content Include="src\scratch.js" />
     <Content Include="zipcodevalidator.js" />
     <None Include="scratch.ts.bak" />
@@ -39,7 +40,6 @@
     <Content Include="Scripts\App\code.js" />
     <Content Include="Scripts\App\downleveling.js" />
     <Content Include="Scripts\App\greeter.js" />
-    <Content Include="Scripts\App\scratch.js" />
     <Content Include="Scripts\App\validation.js" />
     <Content Include="Scripts\App\zipcodevalidator.js" />
     <Content Include="validation.js" />
@@ -61,7 +61,6 @@
     <Content Include="src\tsconfig.json" />
     <Content Include="Scripts\App\app.js.map" />
     <Content Include="Scripts\App\async.js.map" />
-    <Content Include="Scripts\App\scratch.js.map" />
     <Content Include="Scripts\App\validation.js.map" />
     <Content Include="Scripts\App\zipcodevalidator.js.map" />
     <Content Include="Scripts\App\code.js.map" />
